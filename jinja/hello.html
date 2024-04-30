@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- <script src="/package/htmx.org@1.9.11/htmx.min.js"></script> -->
+        <!-- <script src="/vendor/htmx.org@1.9.11/htmx.min.js"></script> -->
+        <script src="/vendor/htmx.org@1.9.11/dist/htmx.min.js"></script>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <div class="border: solid black 2px"
+             hx-trigger="load, every 5s"
+             hx-get="/frag/status/"
+             >
+        </div>
+        <h2>Some data</h2>
+        <table>
+            <tr><th>Id</th><th>Thing</th></tr>
+            <tr hx-trigger="load" hx-swap="outerHTML" hx-get="/rows.frag?after=0">
+                <td class="htmx-indicator" colspan="2">
+                    <span class="htmx-indicator">Loading...</span>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

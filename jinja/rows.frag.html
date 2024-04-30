@@ -1,0 +1,15 @@
+{% for row in rows %}
+<tr>
+    <td>{{ row.id }}</td>
+    <td>{{ row.thing }}</td>
+</tr>
+{% endfor %}
+<tr id="endrow">
+    <td colspan="2">
+        <button hx-get="/rows.frag?after={{ after }}"
+                hx-target="#endrow"
+                hx-swap="outerHTML"
+                hx-indicator="next .htmx-indicator">More...</button>
+        <span class="htmx-indicator">Loading...</span>
+    </td>
+</tr>
