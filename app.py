@@ -35,5 +35,10 @@ def rows():
     return render_template("rows.frag.html", rows=rows, after=next_after)
 
 
+@app.route("/other/")
+def other():
+    return render_template("other.html")
+
+
 import logging
 logging.basicConfig(level="DEBUG")
